@@ -1,0 +1,10 @@
+body {
+        background: rgb(52, 235, 189);
+        background-repeat: no-repeat;
+}
+  div {
+    display: flex;
+    justify-content: center;
+  
+  }
+  
