@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Chrome" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Doggo Images</title>
+  </head>
+  <body>
+    <button id="imageBtn">Click here for Doggo</button>
+    <ul id="list"></ul>
+    
+    <script>
+
+      let elementImg = document.createElement("img");
+      let elementLi = document.createElement("li");
+      let ElementUlLi = document.querySelector("#list");
+      let imageButton = document.querySelector("#imageBtn");
+
+      imageButton.addEventListener("click", randomImg);
+      function randomImg() {
+        fetch("https://dog.ceo/api/breeds/image/random")
+          .then((response) => response.json())
+          .then((data) => {
+            elementImg.src = data.message;
+            elementLi.appendChild(elementImg);
+            ElementUlLi.appendChild(elementLi);
+          })}
+          
+    </script>
+  </body>
+</html>
